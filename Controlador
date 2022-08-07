@@ -1,0 +1,78 @@
+import java.util.Scanner;;
+
+public class Controlador {
+    public static void main(String[] args) {
+        /*
+         * DECLARAR VARIABLES
+         * 
+         */
+        boolean banderaPerro = false, banderaVoluntario = false;
+        Perro perro = new Perro("", "");
+        Voluntario Voluntario = new Voluntario("nombre", "edad", 00, false);
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("BIENVENIDX A LA VETERINARIA ");
+        int respuesta = 7, respuestaSecundaria = 0;
+
+
+        while (respuesta != 4) {
+            System.out.println(" Ingresar  perro ");
+            System.out.println(" Ingresar voluntario ");
+            System.out.println(" Interacción ");
+            System.out.println(" No procede ");
+            respuesta = teclado.nextInt();
+            if (respuesta == 1) {
+                
+                String nombre, raza;
+                System.out.println(" Nombre del perro ");
+                nombre = teclado.next();
+                System.out.println(" Raza del perro");
+                raza = teclado.next();
+                perro.setNombre(nombre);
+                perro.setRaza(raza);
+                System.out.println(" Se ha nombrado correctamente ");
+                System.out.println(perro.ToString());
+                banderaPerro = true;
+            } else if (respuesta == 2) {
+               
+                String nombre, edad, galletas;
+                Boolean galletasClase = false;
+                System.out.println(" Nombre ");
+                nombre = teclado.next();
+                System.out.println(" Edad ");
+                edad = teclado.next();
+                System.out.println(" Numero de galletas ");
+                galletas = teclado.next();
+                if (galletas == "3") {
+                    galletasClase = true;
+                } else {
+                    galletasClase = false;
+                }
+                persona.setNombre(nombre);
+                persona.setEdad(edad);
+                persona.setGalletas(galletas);
+                System.out.println(" Se ha nombrado correctamente ");
+                System.out.println(voluntario.ToString());
+                banderaVoluntario = true;
+            } else if (respuesta == 3) {
+                
+                if (banderaPerro == false || banderaVoluntario == false) {
+                    System.out.println(" Nombre voluntario, nombre perro ");
+                }else{
+                    
+                    Double umbral = perro.getUmbral();
+                    if (umbral < -5) {
+                        System.out.println(perro.Morder());
+                    } else if (umbral >= -5 && umbral <= 5) {
+                        System.out.println(perro.ladrar());
+                    } else if (umbral > 5) {
+                        System.out.println(perro.moverlaCola());
+                    }
+                    perro.psican(Voluntario);
+                }
+                } else if (respuesta == 4) {
+                    System.out.println("Su turno ha terminado");
+            }
+
+        }
+    }
+}
